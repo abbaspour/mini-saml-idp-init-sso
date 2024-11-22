@@ -18,34 +18,4 @@ case protections as per your use case.
 * ~~Deno Deploy~~
 
 ## Sequence
-
-```plantuml
-title "IdP-initiated SAML"
-
-autonumber
-actor "User / Browser" as u
-participant "IdP (this repo)" as idp
-participant "SP (Auth0)" as sp
-participant "OIDC App" as app
-
-u -> idp: GET ?nameID=xxx
-activate idp
-idp -> idp: decode & validate nameID
-idp --> u: HTML Form 
-deactivate  idp
-
-u -> sp: Run JavaScript \n auto-submit Form {SamlResponse, RelayState} 
-activate sp
-sp -> sp: validate SamlResponse
-sp -> sp: create session for user nameID
-sp --> u: redirect app?code=ccc
-deactivate sp
-
-u -> app: redirect ?code=ccc
-activate app
-app -> sp: exchange authorization code
-sp --> app: id_token
-app -> app: validate id_token \n exclude nonce
-app --> u: session cookie
-deactivate app
-```
+![Sequence diagram](./seq.png)
