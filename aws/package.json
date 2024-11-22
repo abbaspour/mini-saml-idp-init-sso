@@ -1,0 +1,14 @@
+{
+  "author": {
+    "name": "Amin Abbaspour"
+  },
+  "license": "LGPL-2.1-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abbaspour/mini-saml-idp-init-sso"
+  },
+  "type": "module",
+  "dependencies": {
+    "xml-crypto": "^2.1.0"
+  }
+}

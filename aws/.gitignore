@@ -1,0 +1,12 @@
+terraform.auto.tfvars
+.terraform
+.terraform.lock.hcl
+*.plan
+*.pem
+*.x5c
+terraform.tfstate*
+.terraform.tfstate*
+*.xml
+*.zip
+package-lock.json
+node_modules
